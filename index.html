@@ -1,0 +1,52 @@
+
+   <html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding-left: 4px;
+            padding-right: 4px;
+        }
+    </style>
+    <link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <title>Microsoft Teams Task Module Tester - Custom Form</title>
+
+</head>
+<body>
+    <script src="@("https://unpkg.com/@microsoft/teams-js@1.6.0/dist/MicrosoftTeams.min.js")"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        microsoftTeams.initialize();
+
+        function validateForm() {
+
+            microsoftTeams.tasks.submitTask("just for demo");
+            return true;
+        }
+    </script>
+
+    <div class="surface theme-light">
+            <div class="panel">
+                <div class="font-semibold font-title">Patient Registration Form:</div>
+                <form method="POST" id="customerForm" onSubmit="return validateForm()">
+                    <div style="width:90%; margin:0 auto;">
+                        <div class="form-group form-field-input" style="margin-bottom: 10px; margin-top: 10px;"></div><label for="fname">First Name: </label><input class="form-control input-field" id="fname" type="text"  name="name" tabindex="1" autofocus>
+                        <div class="form-group form-field-input" style="margin-bottom: 10px; margin-top: 10px;"></div><label for="mname">Middle Name: </label><input class="form-control input-field" id="mname" type="text"  name="name" tabindex="1" autofocus>
+                        <div class="form-group form-field-input" style="margin-bottom: 10px; margin-top: 10px;"></div><label for="lname">Last Name: </label><input class="form-control input-field" id="mname" type="text"  name="name" tabindex="1" autofocus>
+                        <div class="form-group form-field-input" style="margin-bottom: 10px; margin-top: 10px;"></div><label for="sex">SEX : </label><input class="form-control input-field" id="fname" type="text" name="name" tabindex="1" autofocus>
+                        <div class="form-group form-field-input" style="margin-bottom: 10px; margin-top: 10px;"></div><label for="nationality">Nationality: </label><input class="form-control input-field" id="fname" type="text"  name="name" tabindex="1" autofocus>
+                        <div class="form-group form-field-input" style="margin-bottom: 10px; margin-top: 10px;"></div><label for="uid">UID: </label><input class="form-control input-field" id="mname" type="text" name="name" tabindex="1" autofocus>
+                        <div class="form-group form-field-input" style="margin-bottom: 10px;"></div><label for="email">Email: </label><input class="form-control input-field" id="email" type="email" placeholder="name@email.com" name="email" tabindex="2">
+                        <div class="form-group form-field-input" style="margin-bottom: 10px;"></div><label for="favoriteBook">Primary Phone Number: </label><input class="form-control input-field" id="pphonenumber" type="text" placeholder="Phone 1" name="phonenumber" tabindex="3">
+                        <div class="form-group form-field-input" style="margin-bottom: 10px;"></div><label for="pw">Secoundary Phone Number: </label><input class="form-control input-field" id="sphonenumber" type="text" placeholder="Phone 2" name="sphonenumber" tabindex="4">
+                        <button class="btn button-primary" style="margin-bottom: 10px; margin-top: 10px;" type="submit" tabindex="5">Next</button>
+                        <button class="btn button-primary" style="margin-bottom: 10px; margin-top: 10px;" type="submit" tabindex="5">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+</body>
+</html>
+
